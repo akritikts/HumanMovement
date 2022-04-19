@@ -86,7 +86,7 @@
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title{Analyzing spatiotemporal human movement in indoor workspaces}
+\title{Analysing spatiotemporal human movement in indoor workspaces}
 
 %%
 %% The "author" command and its associated commands are used to define
@@ -232,7 +232,31 @@
 \maketitle
 
 \section{Introduction}
-Reopening office spaces will lead to an inevitable increase in contact, interaction, group gathering as well as close contacts, making it harder to maintain social distancing, moreover rely on social distancing for safety. This may in turn lead also to an increase in the risk of transmission inside the workspace. Mediations like changing the workplace design and increasing the air ventilation can be effective but the increase in exposure due to an increase in person to person contact cannot be ignored. As suggested by the World Health Organisation (WHO), the virus that is responsible for human-human transmission may remain viable after aerosolization in the indoor environment. Therefore, the effects of human movement inside the workspace and its influence on the workplace's ability to pose minimal risk must be thoroughly studied while returning to the office spaces. Understanding the movement of employees and various occupants at a workplace will help comprehend their behaviour and identify the day-to-day activities they undertake as an element of work, this will present ways for developing coping mechanisms to avoid exposure risk rather than these events being treated as exceptions. As this research seeks to forecast human mobility inside a building, it can be paired with various air quality index measurements to forecast transmission risk, providing numerical clarity on how crowded a workspace or a point of interest inside the workspace can be while still posing minimal transmission risk. Since this work takes into account multiple types of workplaces, establishing a set of safety guidelines that are common for all workplaces, will serve a larger community.
+Reopening office spaces will lead to an inevitable increase in contact, interaction, group gathering as well as close contacts, making it harder to maintain social distancing, moreover rely on social distancing for safety. This may in turn lead also to an increase in the risk of transmission inside the workspace. Mediations like changing the workplace design and increasing the air ventilation can be effective but the increase in exposure due to an increase in person to person contact cannot be ignored. As suggested by the World Health Organisation (WHO), the virus that is responsible for human-human transmission may remain viable after aerosolization in the indoor environment. Therefore, the effects of human movement inside the workspace and its influence on the workplace's ability to pose minimal risk must be thoroughly studied while returning to the office spaces. 
+
+
+
+This work plans to model human movement inside four different kinds of workspaces (a chemistry lab inside a university campus, an IT office, a hospital ward and a factory), by taking into account their spatial density, occupancy schedules and various indoor activities. Understanding the movement of employees and various occupants at a workplace will help comprehend their behaviour and identify the day-to-day activities they undertake as an element of work. Apart from the general mitigation strategies including physical distancing, increased ventilation, face masks and personal hygiene, this will present ways for developing coping mechanisms to avoid exposure risk rather than such events being treated as exceptions. As this research seeks to forecast human mobility inside a building, it can be paired with various air quality index measurements to forecast transmission risk, providing numerical clarity on how crowded a workspace or a point of interest inside the workspace can be while still posing minimal transmission risk. Previous research in this field has either been towards understanding occupant behaviour or investigating the impact of human activity on airflow patterns in the case of a single human model in a controlled environment. To the best of our knowledge, this is the first work that studies the movement behaviour of occupants in an indoor office space and combines it with the airflow patterns in the presence of airborne disease. We explore the diverse aspects of indoor human mobility across time and space by the means of the following questions:
+\begin{itemize}
+    \item Do employees have a habit of visiting similar locations in the workplace?
+    \item Do employees use the same routes to get from one location to another within the office?
+    \item Is there a difference in the pattern of human movement during the day or between days?
+    \item Is there a relationship between human movement and the density of airborne pathogens in different areas indoors?
+    \item Are there any hot pockets (preferred stations, printing desk) inside the office space?
+    \item Do the hot pockets get congested/crowded at regular intervals?
+    \item Do the common footpaths inside the workspace pose a higher risk of transmission at all times?
+    \item Do factors like sitting location, interconnecting doors, crowdedness and air quality influence human movement patterns indoors (geometric and non-geometric factors)?
+\end{itemize}
+
+
+
+Minimising the danger of infection and close contact is now an element of workplace safety, posing a new challenge for maintaining the quality of the work environment, generating a sense of fulfilment and pleasure, and increasing productivity. A safer workplace will not only encourage employees to return comfortably but will also boost their productivity. Since this work takes into account multiple types of workplaces, establishing context-based safety guidelines for workplaces will serve a larger community. Therefore, the main contributions of this work are:
+\begin{itemize}
+    \item Indoor human movement study, we present an analysis of the spatiotemporal trajectories of employees inside the workspace.
+    \item Event-based human-environment interaction approximation, we perform an event-based correlation between the human mobility trends and the airflow patterns inside the workspace.
+    \item Spatial Context-based safety guidelines, we demonstrate practical implications of the relations between human movement and airflow patterns across workspaces.
+\end{itemize}
+The rest of this paper is organised as follows, we begin by reviewing the recent research work in this domain and identify the gaps in the literature. Then we introduce the utilised terminologies and describe the collected dataset after which we explain the methodology, elaborate on the analysis, and the results and discuss the relations between human movement and airflow patterns across workspaces before summing it up in the conclusion.
 
 \section{Related work}
 With the outbreak of the pandemic and the struggle to reinstate office spaces, a lot of research has been done to reduce the risk of exposure in various types of indoor environments. Although the majority of developments in this field can be classified into three categories: safer indoor navigation, contact tracing and avoidance, and building occupancy simulation, there has also been some research to investigate the effects of human movement on air particles in an indoor space.
@@ -256,7 +280,7 @@ Using optical particle counters (OPS) for particulate concentration monitoring a
 
 
 
-Although some research has been done on modelling human movement for indoor environments and analysing the impact of human movement on airflow patterns inside a space, it has all been conducted in a controlled environment and thus does not take into account the spatiotemporal elements that may limit the occupant's ability to maintain a safe distance at all times or influence occupant behaviour, which may, in turn, drive the airflow pattern. Most projects consider the overall picture of the building, but what happens inside during working hours or scheduled activities, and its impact on controlling or lowering the risk of infection, are yet unknown. There are broad rules for personal hygiene and social distance, but in a space that is used by a variety of individuals throughout the day, as well as visitors and passers-by, the assumption that "if everyone does their bit, we'll all be safe" may not be sufficient.
+Although some research has been done on modelling human movement for indoor environments and analysing the impact of human movement on airflow patterns inside a space, it has all been conducted in a controlled environment and thus does not take into account the spatiotemporal elements that may limit the occupant's ability to maintain a safe distance at all times or influence occupant behaviour, which may, in turn, drive the airflow pattern. Most studies consider the overall picture of the building, but what happens inside during working hours or scheduled activities, and its impact on controlling or lowering the risk of infection, are yet unknown. There are broad rules for personal hygiene and social distance, but in a space that is used by a variety of individuals throughout the day, as well as visitors and passers-by, the assumption that "if everyone does their bit, we'll all be safe" may not be sufficient.
 Therefore the following gaps exist in the literature:
 \begin{itemize}
     \item Lack of understanding about the spatiotemporal human movement inside different kinds of workspaces.
